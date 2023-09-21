@@ -26,7 +26,7 @@ import pyrtmp
 # $ nginx -s quit
 # 或者
 # $ nginx -s stop
-# ffmpeg安装：conda install ffmpeg-python
+# ffmpeg安装：conda install ffmpeg
 
 
 
