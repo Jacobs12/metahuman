@@ -5,7 +5,7 @@ import pyrtmp
 # MAC：https://www.jianshu.com/p/e5de9dec657b
 #         brew tap denji/homebrew-nginx
 #         brew install nginx-full --with-rtmp-module
-#         brew uninstall nginx-full
+#         如果报错了就brew uninstall nginx-full
 #         打开文件/usr/local/etc/nginx/nginx.conf，编辑文件，在最下边添加如下rtmp配置
 # rtmp {
 #     server {
@@ -40,4 +40,10 @@ class GXStream(object):
         cmd = ["ffmpeg", "-re", "-i", input,"-vcodec", "h264", \
                "-preset","superfast", "-acodec","aac", "-strict", "experimental", "-f", "flv",url]
         print(' '.join(cmd))
+        p = subprocess.Popen(cmd,stdin=subprocess.PIPE)
+
+# 转发直播流
+    def relay_stream(self,input:str,output:str):
+
+        cmd = ["ffmpeg","-re","-i",input, "-vcodec", "copy", "-acodec", "aac", "-b:a", "192k", "-b:v", "3000k", "-f", "flv", output]
         p = subprocess.Popen(cmd,stdin=subprocess.PIPE)
