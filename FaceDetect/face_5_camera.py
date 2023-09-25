@@ -2,7 +2,7 @@
 Author: wolffy
 Date: 2023-09-25 17:27:22
 LastEditors: fengtao92 1440913385@qq.com
-LastEditTime: 2023-09-25 17:58:16
+LastEditTime: 2023-09-25 18:05:55
 FilePath: /metahuman/FaceDetect/face_5_camera.py
 Description: 项目名称：虚拟主播软件
 版权所有：北京光线传媒股份有限公司
@@ -44,7 +44,7 @@ class face_emotion():
             # 切换到摄像头镜像
             im_rd = cv2.flip(im_rd,1)
             # 每帧数据延时1ms，延时为0读取的是静态帧
-            k = cv2.waitKey(1)
+            k = cv2.waitKey(int(1000/30))
             # 取灰度
             img_gray = cv2.cvtColor(im_rd,cv2.COLOR_RGB2GRAY)
             # im_rd的意思是img
