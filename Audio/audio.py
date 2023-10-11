@@ -15,12 +15,16 @@ import sounddevice as sd
 devs = sd.query_devices()
 print('声卡')
 for dev in devs:
-    print(dev['name'])
+    # print(dev['name'])
+    device = dev['name']
+    if 'Voice' in device:
+        print(device)
 
-pygame.mixer.init(devicename='Zoom Audio (1ch)')
+# VoiceMeeter Input (VB-Audio VoiceMeeter VAIO)
+pygame.mixer.init(devicename='VoiceMeeter Input (VB-Audio VoiceMeeter VAIO)')
 
-pygame.mixer.music.load(filename='/Users/admin/Desktop/1.mp3')
+pygame.mixer.music.load(filename='Audio\\11.mp3')
 pygame.mixer.music.set_volume(0.5)
-pygame.mixer.music.play(2)
+pygame.mixer.music.play(50)
 while pygame.mixer.music.get_busy():
     pass
