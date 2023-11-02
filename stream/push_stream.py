@@ -1,3 +1,14 @@
+'''
+Author: wolffy
+Date: 2023-09-21 10:16:32
+LastEditors: fengtao92 1440913385@qq.com
+LastEditTime: 2023-11-02 11:05:09
+FilePath: /metahuman/stream/push_stream.py
+Description: 项目名称：虚拟主播软件
+版权所有：北京光线传媒股份有限公司
+技术支持：北京光线传媒股份有限公司
+Copyright (c) 2023 by 北京光线传媒股份有限公司, All Rights Reserved. 
+'''
 import subprocess
 import pyrtmp
 
@@ -29,6 +40,7 @@ import pyrtmp
 # ffmpeg安装：conda install ffmpeg
 
 
+# OBS 服务器：rtmp://172.23.0.199/live 推流码:stream 接收:rtmp://172.23.0.199/live/stream
 
 class GXStream(object):
     def __init__(self) -> None:
